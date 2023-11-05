@@ -6,7 +6,7 @@
 ########################################################
 
 
-sudo dnf update
+sudo dnf update -y
 
 sudo dnf install -y \
 boost-devel \
