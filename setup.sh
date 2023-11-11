@@ -17,15 +17,18 @@ git clone https://github.com/howie-j/freecad.git "$HOME"/git/fc
 cd "$HOME"/git/fc && git remote add upstream https://github.com/FreeCAD/FreeCAD.git
 cd "$HOME" || exit
 
+# add freecad alias 'fc' to .bashrc if not already set
+grep "alias fc=" "$HOME"/.bashrc || echo "alias fc='toolbox run -c freecad-toolbox env QT_QPA_PLATFORM=xcb $HOME/git/fc_build/bin/FreeCAD'" >> "$HOME"/.bashrc
+
+# make scripts executable
+chmod +x scripts/*.sh
+
 # create and setup a toolbox with Fedora 38 and install dependencies
 toolbox create -y -r38 freecad-toolbox
-toolbox run -c freecad-toolbox sh ./scripts/fedora_38_dependencies.sh || echo "freecad dependencies installation failed"
+toolbox run -c freecad-toolbox ./scripts/fedora_38_dependencies.sh || echo "freecad dependencies installation failed"
 
 # compile freecad
-toolbox run -c freecad-toolbox sh ./scripts/compile.sh || echo "freecad dependencies installation failed"
+toolbox run -c freecad-toolbox ./scripts/compile.sh || echo "freecad dependencies installation failed"
 
 # run freecad (env QT_QPA_PLATFORM=xcb only necessary on wayland)
 toolbox run -c freecad-toolbox env QT_QPA_PLATFORM=xcb "$HOME"/git/fc_build/bin/FreeCAD
-
-# add freecad alias 'fc' to .bashrc
-echo "alias fc1='toolbox run -c freecad-toolbox env QT_QPA_PLATFORM=xcb $HOME/git/fc_build/bin/FreeCAD'" >> "$HOME"/.bashrc
