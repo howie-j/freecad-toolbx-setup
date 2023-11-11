@@ -6,8 +6,7 @@
 ########################################################
 
 
-sudo dnf update -y
-
+# install mandatory packages
 sudo dnf install -y \
 boost-devel \
 cmake \
@@ -29,7 +28,7 @@ xerces-c-devel \
 yaml-cpp-devel
 
 
-# OPTIONAL
+# install otional packages
 sudo dnf install -y \
 ccache \
 Coin4-doc \
