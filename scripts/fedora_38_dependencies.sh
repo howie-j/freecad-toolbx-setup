@@ -28,9 +28,11 @@ swig \
 xerces-c-devel \
 yaml-cpp-devel
 
-# # OPTIONAL
-# sudo dnf install -y \
-# Coin4-doc \
-# doxygen \
-# openmpi-devel \
-# PackageKit-gtk3-module
+
+# OPTIONAL
+sudo dnf install -y \
+ccache \
+Coin4-doc \
+doxygen \
+openmpi-devel \
+PackageKit-gtk3-module
