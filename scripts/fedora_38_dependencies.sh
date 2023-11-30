@@ -32,6 +32,7 @@ yaml-cpp-devel
 sudo dnf install -y \
 ccache \
 Coin4-doc \
+libspnav-devel \
 doxygen \
 openmpi-devel \
 PackageKit-gtk3-module
