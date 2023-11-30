@@ -14,6 +14,7 @@ Coin4-devel \
 eigen3-devel \
 med-devel \
 opencascade-devel \
+openmpi-devel \
 python3-devel \
 python3-matplotlib \
 python3-pivy \
@@ -34,5 +35,4 @@ ccache \
 Coin4-doc \
 libspnav-devel \
 doxygen \
-openmpi-devel \
 PackageKit-gtk3-module
